@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:widgate_app_220472/presentation/Screens/discover/discover_screen.dart';
+import 'package:widgate_app_220472/presentation/providers/discover_provider.dart';
 import 'package:widgate_app_220472/theme/app_theme.dart';
 
 void main() {
@@ -10,15 +13,15 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 3).getTheme(),
-      home: Scaffold( // appBar
-        appBar: AppBar(title: const Text('Widgate App - 220472')),
-        body: Center(
-          child: FilledButton(onPressed: (){}, child: Text('Click me!')),
-        ),
-      ),
-    );
-  }
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => DiscoverProvider()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme(selectedColor: 3).getTheme(),
+        home: const DiscoveryScreen(),
+  ),
+);
+}
 }
