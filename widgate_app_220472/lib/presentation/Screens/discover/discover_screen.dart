@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:widgate_app_220472/presentation/providers/discover_provider.dart';
 
 class DiscoveryScreen extends StatelessWidget {
   const DiscoveryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final discoverProvider = context.watch<DiscoverProvider>();
     return Scaffold(
-      body: Center(
-        child: Text(
-          'Aqui se cargaran los videos de la seccion -Descubrir-',
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-      ),
+      body: discoverProvider.initialLoading ? 
+      const Center(child: CircularProgressIndicator(strokeWidth: 2)):
+      const Placeholder()
     );
   }
 }

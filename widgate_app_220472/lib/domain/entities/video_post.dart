@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class VideoPost {
   final String caption; // titulo del video
   final String videURL; // Referencia al video corto
