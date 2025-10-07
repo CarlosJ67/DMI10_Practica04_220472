@@ -2,8 +2,8 @@ List<Map<String, dynamic>> localVideoPosts = [
   {
   'name': 'Subiendo las escaleras automaticas',
   'video_url': 'assets/videos/Crear_Rels.mp4',
-  'likes': 12,
-  'views':123
+  'likes': 150,
+  'views':12233366588
   },
   {
   'name': "Nublado",
@@ -14,6 +14,9 @@ List<Map<String, dynamic>> localVideoPosts = [
   'name': 'La madre naturaleza',
   'video_url': 'assets/videos/Naturaleza.mp4',
   'likes': 150,
-  'views':200
+  'views':200,
+  'comments': 10,
+  'sound': 'Original sound - Nature'
+
   }
 ];

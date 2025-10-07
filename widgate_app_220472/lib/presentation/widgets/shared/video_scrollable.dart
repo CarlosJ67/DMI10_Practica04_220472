@@ -21,7 +21,12 @@ class VideoScrollable extends StatelessWidget {
 
 
             // Botones 
-            VideoButtons(video: videoPost)
+            Positioned(
+              bottom: 40,
+              right: 20,
+              child: VideoButtons(video: videoPost)
+            ),
+            
           ],
         );
       },
