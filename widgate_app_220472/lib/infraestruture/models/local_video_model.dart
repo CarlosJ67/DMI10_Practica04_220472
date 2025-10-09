@@ -5,26 +5,29 @@ class LocalVideoModel {
   final String videoUrl;
   final int likes;
   final int views;
+  final int comments;
 
 
   LocalVideoModel({
 
     required this.name,
     required this.videoUrl,
+    required this.comments,
     this.likes=0,
-    this.views=0
+    this.views=0,
   }
   );
 
 
   factory LocalVideoModel.fromJs(Map<String,dynamic> json) => LocalVideoModel(
     name: json['name'] ?? 'none',
-    videoUrl: json['videoUrl'] ?? 'not found url',
+    videoUrl: json['video_url'] ?? 'not found url',
     likes: json['likes'] ?? 0,
-    views: json['views'] ?? 0
+    views: json['views'] ?? 0,
+    comments: json['comments'] ?? 0
   );/// Mapper te permite recorrer datos 
 
-  VideoPost toVideoPostEntity()=> VideoPost(caption: name, videURL: videoUrl, likes: likes, views: views);
+  VideoPost toVideoPostEntity()=> VideoPost(caption: name, videoURL: videoUrl, likes: likes, views: views, comments: comments);
 }
 
 

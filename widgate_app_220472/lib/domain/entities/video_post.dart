@@ -1,15 +1,17 @@
 class VideoPost {
   final String caption; // titulo del video
-  final String videURL; // Referencia al video corto
+  final String videoURL; // Referencia al video corto
 
   final int likes;
   final int views;
+  final int comments;
 
   VideoPost({
     required this.caption,
-    required this.videURL,
+    required this.videoURL,
     this.likes=0,
-    this.views=0
+    this.views=0,
+    this.comments=0
 });
 
 
